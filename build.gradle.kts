@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version Project.kotlinVersion
+    id("maven-publish")
 }
 
 tasks.withType<Wrapper> {
@@ -10,6 +11,7 @@ tasks.withType<Wrapper> {
 
 allprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "kotlin-kapt")
 
     group = "org.spectral"
     version = Project.version

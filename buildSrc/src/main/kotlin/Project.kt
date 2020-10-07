@@ -30,13 +30,35 @@ object Library {
     private object Version {
         const val logger = "1.0.1"
         const val tinylog = "2.1.2"
+        const val asm = "9.0-beta"
+        const val spectralAsm = "1.1.0"
+        const val dagger = "2.29.1"
+        const val glassfish = "3.1.1"
     }
 
     const val logger = "org.spectral:logger:${Version.logger}"
     const val tinylogApi = "org.tinylog:tinylog-api-kotlin:${Version.tinylog}"
+    const val asm = "org.ow2.asm:asm:${Version.asm}"
+    const val asmUtil = "org.ow2.asm:asm-util:${Version.asm}"
+    const val asmCommons = "org.ow2.asm:asm-commons:${Version.asm}"
+    const val asmTree = "org.ow2.asm:asm-tree:${Version.asm}"
+    const val spectralAsmCore = "org.spectral:asm-core:${Version.spectralAsm}"
+    const val spectralAsmAnalyzer = "org.spectral:asm-analyzer:${Version.spectralAsm}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
+    const val dagger = "com.google.dagger:dagger:${Version.dagger}"
+    const val glassfish = "org.glassfish:javax.annotation:${Version.glassfish}"
 }
 
 fun DependencyHandlerScope.logger() {
     "implementation"(Library.logger)
     "implementation"(Library.tinylogApi)
+}
+
+fun DependencyHandlerScope.asm() {
+    "implementation"(Library.asm)
+    "implementation"(Library.asmUtil)
+    "implementation"(Library.asmCommons)
+    "implementation"(Library.asmTree)
+    "implementation"(Library.spectralAsmCore)
+    "implementation"(Library.spectralAsmAnalyzer)
 }

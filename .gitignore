@@ -6,3 +6,4 @@ out/
 *.log
 !gradle-wrapper.jar
 *.iml
+uml/
